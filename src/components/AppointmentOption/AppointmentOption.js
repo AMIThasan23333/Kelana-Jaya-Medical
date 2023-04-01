@@ -17,6 +17,7 @@ const AppointmentOption = ({options, setTreatment}) => {
       {/* <button className="btn btn-primary">Book Appointment </button> */}
       <label htmlFor="my-modal-3" className="btn btn-primary"
       
+      disabled={slots.length === 0 }
       onClick={()  => setTreatment(options)}
       
       
