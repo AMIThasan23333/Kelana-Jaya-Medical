@@ -20,7 +20,7 @@ const AvailableAppointment = ({selectedDate}) => {
         <div>
              <p className='text-center font-bold  text-primary'> AvailableAppoinment on   {format(selectedDate, 'PP')} </p>
 
-             <div>
+             <div className='grid grid-cols-1 md:grid-cols-w lg:grid-cols-3 gap-6'>
 
                 {
                     appointmentOptions.map(options => <AppointmentOption
