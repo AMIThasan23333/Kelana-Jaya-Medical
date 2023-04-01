@@ -36,9 +36,7 @@ const BookingModal = ({treatment, setTreatment,selectedDate}) => {
             patient: name,
 
             slot,
-
             email,
-
             phone
            }
 
