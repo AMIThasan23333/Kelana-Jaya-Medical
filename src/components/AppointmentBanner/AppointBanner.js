@@ -12,7 +12,7 @@ const AppointBanner = ({selectedDate, setSelectedDate}) => {
 
 
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero ">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <img src={chair} className="max-w-sm rounded-lg shadow-2xl" alt='' />
           <div className='mr-6'>
@@ -25,7 +25,7 @@ const AppointBanner = ({selectedDate, setSelectedDate}) => {
                  
                  ></DayPicker>
 
-                 <p className='text-center font-bold  text-primary'> You Have Selected : {format(selectedDate, 'PP')}</p>
+              
           </div>
         </div>
       </div>

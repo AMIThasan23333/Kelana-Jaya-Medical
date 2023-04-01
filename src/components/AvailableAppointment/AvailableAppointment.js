@@ -1,9 +1,10 @@
+import { format } from 'date-fns';
 import React from 'react';
 
-const AvailableAppointment = () => {
+const AvailableAppointment = ({selectedDate}) => {
     return (
         <div>
-            <h1>Availableappointment </h1>
+             <p className='text-center font-bold  text-primary'> AvailableAppoinment on   {format(selectedDate, 'PP')} </p>
         </div>
     );
 };
