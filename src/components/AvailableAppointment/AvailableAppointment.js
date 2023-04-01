@@ -8,6 +8,10 @@ const AvailableAppointment = ({selectedDate}) => {
 
     const [appointmentOptions, setAppointmentOptions ] = useState([])
 
+    const [treatment , setTreatment] = useState(null)
+
+
+
 
 
     useEffect(() => {
@@ -26,11 +30,21 @@ const AvailableAppointment = ({selectedDate}) => {
                 {
                     appointmentOptions.map(options => <AppointmentOption
                     options={options}
+
+                    setTreatment={setTreatment}
                     ></AppointmentOption>)
                 }
              </div>
 
-             <BookingModal></BookingModal>
+
+             {
+
+     treatment &&  <BookingModal
+treatment={treatment}
+></BookingModal>
+             }
+            
+
         </div>
     );
 };
