@@ -5,7 +5,7 @@ const BookingModal = () => {
 
 
     /* The button to open modal */
-/* <label htmlFor="my-modal-3" className="btn">open modal</label> */
+/*  */
 
 
 <div>
