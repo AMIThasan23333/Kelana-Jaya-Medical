@@ -6,9 +6,8 @@ import { useQuery } from '@tanstack/react-query';
 
 const AvailableAppointments = ({ selectedDate }) => {
     // const [appointmentOptions, setAppointmentOptions] = useState([]);
+    
     const [treatment, setTreatment] = useState(null);
-
-
 
       const { data:appointmentOptions = [ ]} = useQuery({
 
