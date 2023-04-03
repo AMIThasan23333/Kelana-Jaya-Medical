@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import BookingModal from '../BookingModal/BookingModal';
 import AppointmentOption from './AppointmentOption';
 import { useQuery } from '@tanstack/react-query';
+import Loading from './../../Shared/Loading/Loading';
 
 const AvailableAppointments = ({ selectedDate }) => {
     // const [appointmentOptions, setAppointmentOptions] = useState([]);
@@ -27,6 +28,12 @@ const AvailableAppointments = ({ selectedDate }) => {
     //         .then(res => res.json())
     //         .then(data => setAppointmentOptions(data))
     // }, [])
+
+
+    if(isLoading){
+
+        return <Loading></Loading>
+    }
 
     return (
         <section className='my-16'>
