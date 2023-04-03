@@ -8,10 +8,15 @@ const AvailableAppointments = ({ selectedDate }) => {
     // const [appointmentOptions, setAppointmentOptions] = useState([]);
     const [treatment, setTreatment] = useState(null);
 
-    const  {data:Services = []} = useQuery({
 
-        queryKey: ['Services'],
-        queryFn : () => fetch('http://localhost:5000/Services')
+    const date = format(selectedDate, 'PP')
+
+
+
+    const  {data:Services = [], refetch , isLoading} = useQuery({
+
+        queryKey: ['Services', date, ],
+        queryFn : () => fetch(`http://localhost:5000/Services?date=${date}`)
         .then(res => res.json())
 
 
@@ -38,6 +43,8 @@ const AvailableAppointments = ({ selectedDate }) => {
             {
                 treatment &&
                 <BookingModal
+
+                   refetch ={refetch}
                     selectedDate={selectedDate}
                     treatment={treatment}
                     setTreatment={setTreatment}
