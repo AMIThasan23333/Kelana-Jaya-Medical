@@ -6,24 +6,19 @@ import { useQuery } from '@tanstack/react-query';
 
 const AvailableAppointments = ({ selectedDate }) => {
     // const [appointmentOptions, setAppointmentOptions] = useState([]);
-    
     const [treatment, setTreatment] = useState(null);
 
-      const { data:appointmentOptions = [ ]} = useQuery({
+    const  {data:Services = []} = useQuery({
 
-        queryKey : ['appointmentOptions'],
-
-        queryFn : () => fetch('http://localhost:5000/services')
+        queryKey: ['Services'],
+        queryFn : () => fetch('http://localhost:5000/Services')
         .then(res => res.json())
 
-      })
 
-
-
-
+    })
 
     // useEffect(() => {
-    //     fetch('http://localhost:5000/services')
+    //     fetch('appointmentOptions.json')
     //         .then(res => res.json())
     //         .then(data => setAppointmentOptions(data))
     // }, [])
@@ -33,7 +28,7 @@ const AvailableAppointments = ({ selectedDate }) => {
             <p className='text-center text-secondary font-bold'>Available Appointments on {format(selectedDate, 'PP')}</p>
             <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-6'>
                 {
-                    appointmentOptions.map(option => <AppointmentOption
+                    Services.map(option => <AppointmentOption
                         key={option._id}
                         appointmentOption={option}
                         setTreatment={setTreatment}
