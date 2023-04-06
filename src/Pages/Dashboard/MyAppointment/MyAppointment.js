@@ -18,8 +18,6 @@ const MyAppointment = () => {
 
                 headers : {
                     authorization : `bearer  ${localStorage.getItem('accessToken')}`
-
-                    
                 }
             })
             const data = await res.json()
@@ -50,7 +48,7 @@ const MyAppointment = () => {
                 
                 {
 
-                    bookings.map((booking,i) => 
+                    bookings?.map((booking,i) => 
                         <tr>
                         <th>{i}</th>
                         <td>{booking.patient}</td>
